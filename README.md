@@ -12,9 +12,11 @@ Features
     Enemy types: Flying Bees and Crawling Worms
 
 Screenshots
+<br>
 <img src="screenshots/gameplay1.png" alt="Gameplay Screenshot 1" width="640"/>
 <img src="screenshots/gameplay2.png" alt="Gameplay Screenshot 2" width="640"/>
 <img src="screenshots/gameplay3.png" alt="Gameplay Screenshot 3" width="640"/>
+
 Controls
 Key	Action
 ← / →	Move left/right
