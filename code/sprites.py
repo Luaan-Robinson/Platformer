@@ -63,10 +63,19 @@ class AnimatedSprite(Sprite):
 class Enemy(AnimatedSprite):
     def __init__(self, frames, pos, groups):
         super().__init__(frames, pos, groups)
+        self.death_timer = Timer(200, func = self.kill)
+
+    def destroy(self):
+        self.death_timer.activate()
+        self.animation_speed = 0
+        self.image = pygame.mask.from_surface(self.image).to_surface()
+        self.image.set_colorkey('black')
 
     def update(self, dt):
-        self.move(dt)
-        self.animate(dt)  
+        self.death_timer.update()
+        if not self.death_timer:
+            self.move(dt)
+            self.animate(dt)  
         self.constraint()  
 
 class Bee(Enemy):
@@ -84,9 +93,6 @@ class Bee(Enemy):
         if self.rect.right <= 0:
             self.kill()    
    
-
-       
-
 class Worm(Enemy):
     def __init__(self, frames, rect, groups):
         super().__init__(frames, rect.topleft, groups)
@@ -105,7 +111,6 @@ class Worm(Enemy):
             self.direction *= -1
             self.frames = [pygame.transform.flip(surf, True, False) for surf in self.frames]
             
-
 class Player(AnimatedSprite):
     def __init__(self, pos, groups, collision_sprites, frames, create_bullet):
         super().__init__(frames, pos, groups)    
