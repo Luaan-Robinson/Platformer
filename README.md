@@ -1,6 +1,6 @@
 Retro Platformer
 
-A classic-style 2D platformer built with Pygame featuring shooting mechanics, enemy AI, and smooth camera movement.
+A classic-style 2D platformer built with Pygame
 Features
 
     Side-scrolling platformer gameplay
@@ -10,12 +10,6 @@ Features
     Shooting mechanics with muzzle flash effects
 
     Enemy types: Flying Bees and Crawling Worms
-
-    Collision detection with masks for precision
-
-    Animated sprites and parallax-style camera
-
-    Sound effects and background music
 
 Screenshots
 <img src="screenshots/gameplay1.png" alt="Gameplay Screenshot 1" width="640"/>
